@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Benzin';
+    src: url('../fonts/Benzin-Semibold.ttf');
+    font-weight: 600;
+}
+
+@keyframes jumpingLetter {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    100% {
+        transform: translateY(-40%) rotate(-5deg);
+    }
+}
+
+:root {
+    --clr-bg: #F9DEDC;
+    --clr-txt: #110403;
+    --clr-primary: #DA8E2B;
+    --ls-space: .05rem;
+    --bor-rad: .125rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ul li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Benzin';
+    height: 100vh;
+    background: var(--clr-bg);
+    font-size: 16px;
+    color: var(--clr-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav>ul>li {
+    position: relative;
+}
+
+p {
+    letter-spacing: var(--ls-space);
+    padding: 0.5rem;
+    color: var(--clr-txt);
+    position: relative;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+p:hover {
+    color: var(--clr-primary);
+}
+
+ul.dropdown {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: max-content;
+    background: var(--clr-bg);
+    border-radius: var(--bor-rad);
+    border: 2px solid hsl(34, 70%, 41%);
+    transition: opacity ease-in-out .5s;
+}
+
+nav>ul>li:hover ul.dropdown {
+    opacity: 1;
+}
+
+ul.dropdown a {
+    font-size: .875rem;
+    display: block;
+    padding: .5rem;
+    text-decoration: none;
+    color: var(--clr-txt);
+    letter-spacing: var(--ls-space);
+    text-align: center;
+    transition: ease-in-out .2s;
+}
+
+ul.dropdown a:hover {
+    color: var(--clr-primary);
+}
+
+a.github {
+    font-family: 'Benzin';
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--clr-txt);
+    text-shadow: 0 2px 15px rgba(17, 4, 3, .5);
+    display: flex;
+    transition: ease-in-out;
+}
+
+a.github:hover {
+    color: var(--clr-primary);
+    text-shadow: 0 2px 15px rgba(218, 142, 43, .5);
+}
